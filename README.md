@@ -15,7 +15,7 @@ Row‑based CSV utilities for [ComfyUI](https://github.com/comfyanonymous/ComfyU
 From your ComfyUI directory:
 
 ```bash
-git clone https://github.com/<your-github>/comfyui-csv-utils custom_nodes/csv_utils
+git clone https://github.com/strhwste/comfyui_csv_utils
 ```
 Then restart ComfyUI.
 
