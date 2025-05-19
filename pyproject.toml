@@ -1,0 +1,15 @@
+[project]
+name = "comfyui-csv-utils"
+version = "0.1.0"
+description = "Custom CSV handling nodes for ComfyUI"
+authors = [{ name = "Anonymous" }]
+license = { text = "MIT" }
+requires-python = ">=3.8"
+
+[project.urls]
+Repository = "https://github.com/yourname/comfyui-csv-utils"
+
+[tool.comfy]
+PublisherId = "anonymous"
+DisplayName = "CSV Utils"
+Icon = ""
