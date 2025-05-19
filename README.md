@@ -16,9 +16,10 @@ From your ComfyUI directory:
 
 ```bash
 git clone https://github.com/<your-github>/comfyui-csv-utils custom_nodes/csv_utils
+```
 Then restart ComfyUI.
 
-🛠 Usage
+## 🛠 Usage
 In ComfyUI’s node browser, navigate to utils > csv.
 
 Drag in Search CSV by Row or Write CSV by Row.
@@ -33,7 +34,7 @@ Header: Column name.
 
 Value (for write): The string to write.
 
-📖 Examples
+## 📖 Examples
 Given a file data.csv:
 
 csv
@@ -61,35 +62,7 @@ Keyword;Name;Age
 row1;Alice;30
 row2;Bob;25
 ; ;35
-📝 Project Structure
-markdown
-Copy
-Edit
-comfyui-csv-utils/
-├── .gitignore
-├── LICENSE
-├── README.md        ← you are here
-├── pyproject.toml
-└── csv_utils/
-    ├── __init__.py  ← node mappings
-    └── nodes.py     ← implementation
-📦 Packaging
-pyproject.toml declares this as a ComfyUI plugin:
 
-toml
-Copy
-Edit
-[project]
-name = "comfyui-csv-utils"
-version = "0.1.0"
-description = "Row-based CSV utils for ComfyUI"
-authors = [{ name = "Your Name" }]
-license = { text = "MIT" }
-requires-python = ">=3.8"
-
-[tool.comfy]
-PublisherId = "your-github-username"
-DisplayName = "CSV Utils (Row‑based)"
-📜 License
+## 📜 License
 This project is released under the MIT License. See LICENSE for details.
 
