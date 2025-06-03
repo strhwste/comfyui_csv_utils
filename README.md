@@ -10,6 +10,9 @@ Row‑based CSV utilities for [ComfyUI](https://github.com/comfyanonymous/ComfyU
 - **Write CSV by Row**  
   Writes a value to a specific row and column (identified by header), extending rows/columns as needed.
 
+  - **Get Index from JSON list key**  
+
+
 ## 📂 Installation
 
 From your ComfyUI directory:
