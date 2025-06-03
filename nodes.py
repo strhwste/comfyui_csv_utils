@@ -1,5 +1,6 @@
 import csv
 import os
+import json
 
 class SearchCSVByRow:
     def __init__(self):
@@ -87,3 +88,48 @@ class WriteCSVByRow:
             writer = csv.writer(csvfile, delimiter=';')
             writer.writerows(rows)
         return (Value,)
+
+class ExtractFromJSON:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "JSON": ("STRING", {"default": ""}),
+                "Key": ("STRING", {"default": ""}),
+                "Index": ("INT", {"default": 0, "min": 0}),
+            },
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("Value",)
+    FUNCTION = "extract_from_json"
+    CATEGORY = "utils/json"
+
+    def extract_from_json(self, JSON, Key, Index):
+        try:
+            data = json.loads(JSON)
+        except Exception as e:
+            print(f"Error: JSON konnte nicht geladen werden: {e}")
+            return ("",)
+        # Key-Pfad auflösen (z.B. foo.bar.baz)
+        keys = [k for k in Key.split('.') if k]
+        value = data
+        for k in keys:
+            if isinstance(value, dict) and k in value:
+                value = value[k]
+            else:
+                print(f"Error: Key '{k}' nicht gefunden.")
+                return ("",)
+        # Wenn Liste, Index anwenden
+        if isinstance(value, list):
+            if 0 <= Index < len(value):
+                value = value[Index]
+            else:
+                print(f"Error: Index {Index} außerhalb der Liste.")
+                return ("",)
+        # Wert als String zurückgeben
+        return (str(value),)
+
